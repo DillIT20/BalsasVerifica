@@ -18,12 +18,11 @@ import {
 } from "lucide-react";
 
 const AdminDashboard = () => {
-  // Calculate statistics
   const stats = {
     totalPosts: posts.length,
     totalUsers: users.length,
     totalInstitutions: institutions.length,
-    pendingReports: 5, // Mock data
+    pendingReports: 5, 
     resolvedPosts: posts.filter((p) => p.status === "resolved").length,
     pendingPosts: posts.filter((p) => p.status === "pending").length,
     inProgressPosts: posts.filter((p) => p.status === "in_progress").length,
@@ -36,7 +35,6 @@ const AdminDashboard = () => {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold flex items-center gap-3">
@@ -52,7 +50,6 @@ const AdminDashboard = () => {
         </Badge>
       </div>
 
-      {/* Key Metrics */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <Card>
           <CardContent className="p-4 text-center">
@@ -92,7 +89,6 @@ const AdminDashboard = () => {
         </Card>
       </div>
 
-      {/* Quick Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card>
           <CardHeader className="pb-2">
@@ -144,7 +140,6 @@ const AdminDashboard = () => {
         </Card>
       </div>
 
-      {/* Main Content Tabs */}
       <Tabs defaultValue="overview" className="space-y-4">
         <TabsList className="grid w-full grid-cols-5">
           <TabsTrigger value="overview">Visão Geral</TabsTrigger>
@@ -156,7 +151,6 @@ const AdminDashboard = () => {
 
         <TabsContent value="overview" className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Posts by Status */}
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -195,7 +189,6 @@ const AdminDashboard = () => {
               </CardContent>
             </Card>
 
-            {/* Recent Activity */}
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
